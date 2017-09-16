@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatTextView;
+import android.view.View;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -15,7 +16,7 @@ import com.facebook.login.widget.LoginButton;
 
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FacebookCallback<LoginResult> {
 
     private AppCompatEditText emailEt;
     private AppCompatEditText passwordEt;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private AppCompatTextView aboutUs;
     private AppCompatTextView contact;
     private AppCompatTextView follow;
+    private AppCompatTextView facebookLogin;
     private CallbackManager callbackManager;
 
     @Override
@@ -37,26 +39,11 @@ public class MainActivity extends AppCompatActivity {
         passwordEt = (AppCompatEditText) findViewById(R.id.password_et);
         forgotPassword = (AppCompatTextView) findViewById(R.id.forgot_password);
         login = (AppCompatTextView) findViewById(R.id.login);
+        facebookLogin = (AppCompatTextView) findViewById(R.id.facebook_login);
         loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");
         callbackManager = CallbackManager.Factory.create();
-        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                //go to next activity
-            }
-
-            @Override
-            public void onCancel() {
-
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-
-            }
-        });
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("public_profile"));
+        LoginManager.getInstance().registerCallback(callbackManager, this);
         signUp = (AppCompatTextView) findViewById(R.id.sign_up);
         learnMore = (AppCompatTextView) findViewById(R.id.learn_more);
         aboutUs = (AppCompatTextView) findViewById(R.id.about);
@@ -68,5 +55,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onSuccess(LoginResult loginResult) {
+
+    }
+
+    @Override
+    public void onCancel() {
+
+    }
+
+    @Override
+    public void onError(FacebookException error) {
+
+    }
+
+    public void facebookLogin(View view) {
+        loginButton.performClick();
     }
 }

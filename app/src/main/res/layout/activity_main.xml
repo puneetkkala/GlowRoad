@@ -94,12 +94,31 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/login_button"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp" />
+            android:layout_height="wrap_content">
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/login_button"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp" />
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:padding="8dp"
+                android:onClick="facebookLogin"
+                android:id="@+id/facebook_login"
+                android:textColor="#FFFFFF"
+                android:background="#3B5998"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:text="@string/login_with_facebook"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
         <LinearLayout
             android:layout_marginTop="8dp"
             android:gravity="center"
