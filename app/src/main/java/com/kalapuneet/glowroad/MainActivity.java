@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements FacebookCallback<
 
     @Override
     public void onSuccess(LoginResult loginResult) {
-
+        FeedActivity.start(this);
     }
 
     @Override
@@ -74,5 +74,11 @@ public class MainActivity extends AppCompatActivity implements FacebookCallback<
 
     public void facebookLogin(View view) {
         loginButton.performClick();
+    }
+
+    public void normalLogin(View view) {
+        if (!emailEt.getText().toString().isEmpty() && !passwordEt.getText().toString().isEmpty()) {
+            FeedActivity.start(this);
+        }
     }
 }

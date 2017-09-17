@@ -85,6 +85,7 @@
             android:layout_marginStart="4dp"
             android:layout_marginEnd="4dp"
             android:padding="8dp"
+            android:onClick="normalLogin"
             android:id="@+id/login"
             android:textColor="#FFFFFF"
             android:background="#32CC32"
