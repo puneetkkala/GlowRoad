@@ -1,6 +1,7 @@
 package com.kalapuneet.glowroad;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatEditText;
@@ -49,6 +50,11 @@ public class MainActivity extends AppCompatActivity implements FacebookCallback<
         aboutUs = (AppCompatTextView) findViewById(R.id.about);
         contact = (AppCompatTextView) findViewById(R.id.contact);
         follow = (AppCompatTextView) findViewById(R.id.follow);
+        SharedPreferences sharedPreferences = getSharedPreferences("random",MODE_PRIVATE);
+        boolean flag = sharedPreferences.getBoolean("login",false);
+        if (flag) {
+            next();
+        }
     }
 
     @Override
@@ -57,9 +63,18 @@ public class MainActivity extends AppCompatActivity implements FacebookCallback<
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
+    private void next() {
+        SharedPreferences sharedPreferences = getSharedPreferences("random",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("login",true);
+        editor.apply();
+        FeedActivity.start(this);
+        finish();
+    }
+
     @Override
     public void onSuccess(LoginResult loginResult) {
-        FeedActivity.start(this);
+        next();
     }
 
     @Override
@@ -78,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements FacebookCallback<
 
     public void normalLogin(View view) {
         if (!emailEt.getText().toString().isEmpty() && !passwordEt.getText().toString().isEmpty()) {
-            FeedActivity.start(this);
+            next();
         }
     }
 }

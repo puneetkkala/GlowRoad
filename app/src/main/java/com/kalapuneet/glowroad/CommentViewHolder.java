@@ -1,5 +1,7 @@
 package com.kalapuneet.glowroad;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.widget.AppCompatImageView;
@@ -17,9 +19,11 @@ public class CommentViewHolder extends RecyclerView.ViewHolder implements View.O
     private AppCompatTextView whatsapp;
     private AppCompatTextView connect;
     private Comment comment;
+    private Context context;
 
-    public void setComment(Comment comment) {
+    public void setComment(Comment comment, Context context) {
         this.comment = comment;
+        this.context = context;
         String text = comment.getUserName() + ", " + comment.getUserLocation() + " " + comment.getCommentText();
         SpannableString styledString = new SpannableString(text);
 
@@ -49,10 +53,20 @@ public class CommentViewHolder extends RecyclerView.ViewHolder implements View.O
         nameLocationContent = (AppCompatTextView) itemView.findViewById(R.id.name_location_content);
         whatsapp = (AppCompatTextView) itemView.findViewById(R.id.whatsapp);
         connect = (AppCompatTextView) itemView.findViewById(R.id.connect);
+        whatsapp.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.whatsapp: {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                sendIntent.setType("text/plain");
+                context.startActivity(sendIntent);
+                break;
+            }
+        }
     }
 }
