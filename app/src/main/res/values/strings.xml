@@ -19,4 +19,28 @@
     <string name="login_with_facebook">Login with Facebook</string>
     <string name="gr">GR</string>
     <string name="seller_check">Are you a seller?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="post_hint"><![CDATA[Create a post, business requirement & more]]></string>
+    <string name="products_to_sell">PRODUCTS TO SELL</string>
+    <string name="my_products">MY PRODUCTS</string>
+    <string name="browse_shops">BROWSE SHOPS</string>
+    <string name="find_buyers">FIND BUYERS</string>
+    <string name="premium_post">PREMIUM POST</string>
+    <string name="all_premium_posts">ALL PREMIUM POSTS</string>
+    <string name="plus_follow">+ Follow</string>
+    <string name="shop_name">Shop Name</string>
+    <string name="location">Location</string>
+    <string name="shop_tag_line">Shop Tag Line</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="_12">+12</string>
+    <string name="more_products_by_shop_name">MORE PRODUCTS BY SHOP NAME</string>
+    <string name="write_a_comment">Write a comment</string>
+    <string name="comment">Comment</string>
+    <string name="_312_visit_shop">+312\nVisit Shop</string>
+    <string name="view_number">View Number</string>
+    <string name="connect">+Connect</string>
+    <string name="_2d">2D</string>
+    <string name="ramya_coimbatore_hi_pls_send_updates_to_my_number_8099999998_i_am_interested">Ramya, Coimbatore Hi pls send updates to my number 8099999998. I am interested</string>
 </resources>

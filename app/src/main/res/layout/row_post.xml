@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="center_vertical"
+    android:padding="8dp"
+    android:background="#FFFFFF"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <android.support.v7.widget.AppCompatImageView
+        android:src="#727272"
+        android:id="@+id/profile_picture"
+        android:layout_width="48dp"
+        android:layout_height="48dp" />
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/post_et"
+        android:layout_marginStart="16dp"
+        android:textSize="12sp"
+        android:hint="@string/post_hint"
+        android:background="#00FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
