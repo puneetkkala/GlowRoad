@@ -46,14 +46,17 @@ public class FeedPostViewHolder extends RecyclerView.ViewHolder implements View.
         shopTagLine.setText(post.getUserSubtitle());
         follow.setOnClickListener(this);
         postContent.setText(post.getPostContent());
-        remainingImageCount.setText(post.getPostImages().size() - 1);
+        remainingImageCount.setText(String.valueOf(post.getPostImages().size() - 1));
         moreProductsBy.setText("MORE PRODUCTS BY " + post.getUserName());
-        like.setText(post.getLikes());
+        like.setText(String.valueOf(post.getLikes()));
         comment.setOnClickListener(this);
         forward.setOnClickListener(this);
         more.setOnClickListener(this);
         commentRv.setLayoutManager(new LinearLayoutManager(context));
         commentBtn.setOnClickListener(this);
+        CommentAdapter commentAdapter = new CommentAdapter();
+        commentAdapter.setComments(post.getComments());
+        commentRv.setAdapter(commentAdapter);
     }
 
     public FeedPostViewHolder(View itemView, Context context) {

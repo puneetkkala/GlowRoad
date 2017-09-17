@@ -1,77 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:background="#FFFFFF"
-    android:padding="8dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <LinearLayout
-        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:padding="8dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <android.support.v7.widget.AppCompatTextView
-            android:layout_weight="1"
-            android:id="@+id/products_to_sell"
-            android:textSize="13sp"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:drawableStart="@drawable/ic_money_bag"
-            android:text="@string/products_to_sell"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_weight="1"
+                android:id="@+id/products_to_sell"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:drawableStart="@drawable/ic_money_bag"
+                android:text="@string/products_to_sell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <View
+                android:background="#EEEEEE"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_weight="1"
+                android:id="@+id/my_products"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:drawableStart="@drawable/ic_dress"
+                android:text="@string/my_products"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
         <View
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="#EEEEEE"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_width="1dp"
-            android:layout_height="match_parent" />
-        <android.support.v7.widget.AppCompatTextView
-            android:layout_weight="1"
-            android:id="@+id/my_products"
-            android:textSize="13sp"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:drawableStart="@drawable/ic_dress"
-            android:text="@string/my_products"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_weight="1"
+                android:id="@+id/browse_shops"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:drawableStart="@drawable/ic_shopping_bag"
+                android:text="@string/browse_shops"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <View
+                android:background="#EEEEEE"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_width="1dp"
+                android:layout_height="match_parent" />
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_weight="1"
+                android:id="@+id/find_buyers"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:drawableStart="@drawable/ic_shopping_cart"
+                android:text="@string/find_buyers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
     </LinearLayout>
     <View
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:background="#EEEEEE"
         android:layout_width="match_parent"
-        android:layout_height="1dp" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <android.support.v7.widget.AppCompatTextView
-            android:layout_weight="1"
-            android:id="@+id/browse_shops"
-            android:textSize="13sp"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:drawableStart="@drawable/ic_shopping_bag"
-            android:text="@string/browse_shops"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-        <View
-            android:background="#EEEEEE"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_width="1dp"
-            android:layout_height="match_parent" />
-        <android.support.v7.widget.AppCompatTextView
-            android:layout_weight="1"
-            android:id="@+id/find_buyers"
-            android:textSize="13sp"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:drawableStart="@drawable/ic_shopping_cart"
-            android:text="@string/find_buyers"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+        android:layout_height="8dp" />
 </LinearLayout>

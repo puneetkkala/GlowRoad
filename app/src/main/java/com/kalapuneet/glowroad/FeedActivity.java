@@ -10,7 +10,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.Toolbar;
 
-public class FeedActivity extends AppCompatActivity {
+public class FeedActivity extends AppCompatActivity implements TabLayout.OnTabSelectedListener {
 
     private Toolbar toolbar;
     private AppCompatImageView hamburger;
@@ -40,5 +40,22 @@ public class FeedActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_planet_earth));
         pager = (ViewPager) findViewById(R.id.pager);
         tabLayout.setupWithViewPager(pager);
+        tabLayout.setOnTabSelectedListener(this);
+        pager.setAdapter(new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount()));
+    }
+
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        //
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+        //
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+        //
     }
 }
