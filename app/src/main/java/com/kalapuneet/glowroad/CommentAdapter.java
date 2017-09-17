@@ -24,7 +24,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentViewHolder> {
     @Override
     public void onBindViewHolder(CommentViewHolder holder, int position) {
         if (position > -1 && position < comments.size()) {
-
+            holder.setComment(comments.get(position));
         }
     }
 

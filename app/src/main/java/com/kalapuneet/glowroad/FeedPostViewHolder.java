@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class FeedPostViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     private AppCompatTextView allPremiumPosts;
@@ -92,6 +94,24 @@ public class FeedPostViewHolder extends RecyclerView.ViewHolder implements View.
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.comment_btn: {
+                if (!commentEt.getText().toString().isEmpty()) {
+                    Comment comment = new Comment();
+                    comment.setPostId(post.getPostId());
+                    comment.setCommentId(10000 + 2);
+                    comment.setUserName("Ramya");
+                    comment.setUserLocation("Coimbatore");
+                    comment.setCommentText(commentEt.getText().toString());
+                    ArrayList<Comment> comments = post.getComments();
+                    comments.add(comment);
+                    post.setComments(comments);
+                    CommentAdapter commentAdapter = new CommentAdapter();
+                    commentAdapter.setComments(post.getComments());
+                    commentRv.setAdapter(commentAdapter);
+                    commentEt.setText("");
+                }
+            }
+        }
     }
 }
