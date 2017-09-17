@@ -33,15 +33,19 @@ public class FeedActivity extends AppCompatActivity implements TabLayout.OnTabSe
         search = (AppCompatImageView) findViewById(R.id.search);
         seller = (AppCompatTextView) findViewById(R.id.seller);
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
+        pager = (ViewPager) findViewById(R.id.pager);
+        tabLayout.setupWithViewPager(pager);
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_newspaper));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_shop));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_add));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_chat));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_planet_earth));
-        pager = (ViewPager) findViewById(R.id.pager);
-        tabLayout.setupWithViewPager(pager);
         tabLayout.setOnTabSelectedListener(this);
         pager.setAdapter(new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount()));
+        int ICONS[] = new int[] {R.drawable.ic_newspaper,R.drawable.ic_shop,R.drawable.ic_add,R.drawable.ic_chat,R.drawable.ic_planet_earth};
+        for (int i=0;i<tabLayout.getTabCount();i++) {
+            tabLayout.getTabAt(i).setIcon(ICONS[i]);
+        }
     }
 
     @Override

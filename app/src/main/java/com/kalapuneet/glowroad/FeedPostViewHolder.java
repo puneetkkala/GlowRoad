@@ -57,7 +57,7 @@ public class FeedPostViewHolder extends RecyclerView.ViewHolder implements View.
         commentRv.setLayoutManager(new LinearLayoutManager(context));
         commentBtn.setOnClickListener(this);
         CommentAdapter commentAdapter = new CommentAdapter();
-        commentAdapter.setComments(post.getComments());
+        commentAdapter.setComments(post.getComments(),context);
         commentRv.setAdapter(commentAdapter);
     }
 
@@ -107,7 +107,7 @@ public class FeedPostViewHolder extends RecyclerView.ViewHolder implements View.
                     comments.add(comment);
                     post.setComments(comments);
                     CommentAdapter commentAdapter = new CommentAdapter();
-                    commentAdapter.setComments(post.getComments());
+                    commentAdapter.setComments(post.getComments(), context);
                     commentRv.setAdapter(commentAdapter);
                     commentEt.setText("");
                 }
