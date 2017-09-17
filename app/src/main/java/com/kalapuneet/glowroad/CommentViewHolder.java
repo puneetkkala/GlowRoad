@@ -1,11 +1,9 @@
 package com.kalapuneet.glowroad;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
@@ -21,9 +19,9 @@ public class CommentViewHolder extends RecyclerView.ViewHolder implements View.O
     private AppCompatTextView whatsapp;
     private AppCompatTextView connect;
     private Comment comment;
-    private Activity context;
+    private Context context;
 
-    public void setComment(Comment comment, Activity context) {
+    public void setComment(Comment comment, Context context) {
         this.comment = comment;
         this.context = context;
         String text = comment.getUserName() + ", " + comment.getUserLocation() + " " + comment.getCommentText();
@@ -62,9 +60,11 @@ public class CommentViewHolder extends RecyclerView.ViewHolder implements View.O
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.whatsapp: {
-                Intent sendIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("tel:9740244566"));
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
                 sendIntent.setType("text/plain");
+                sendIntent.setPackage("com.whatsapp");
                 context.startActivity(sendIntent);
                 break;
             }
