@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
@@ -60,8 +61,7 @@ public class CommentViewHolder extends RecyclerView.ViewHolder implements View.O
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.whatsapp: {
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
+                Intent sendIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("tel:9740244566"));
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
                 sendIntent.setType("text/plain");
                 context.startActivity(sendIntent);
