@@ -1,5 +1,6 @@
 package com.kalapuneet.glowroad;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatImageView;
@@ -39,7 +40,7 @@ public class FeedPostViewHolder extends RecyclerView.ViewHolder implements View.
     private AppCompatEditText commentEt;
     private AppCompatTextView commentBtn;
     private Post post;
-    private Context context;
+    private Activity context;
 
     public void setData(Post post) {
         this.post = post;
@@ -61,7 +62,7 @@ public class FeedPostViewHolder extends RecyclerView.ViewHolder implements View.
         commentRv.setAdapter(commentAdapter);
     }
 
-    public FeedPostViewHolder(View itemView, Context context) {
+    public FeedPostViewHolder(View itemView, Activity context) {
         super(itemView);
         this.context = context;
         allPremiumPosts = (AppCompatTextView) itemView.findViewById(R.id.all_premium_posts);

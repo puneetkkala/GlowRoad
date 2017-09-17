@@ -1,6 +1,6 @@
 package com.kalapuneet.glowroad;
 
-import android.content.Context;
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +11,9 @@ import java.util.ArrayList;
 public class CommentAdapter extends RecyclerView.Adapter<CommentViewHolder> {
 
     private ArrayList<Comment> comments;
-    private Context context;
+    private Activity context;
 
-    public void setComments(ArrayList<Comment> comments, Context context) {
+    public void setComments(ArrayList<Comment> comments, Activity context) {
         this.comments = comments;
         this.context = context;
     }

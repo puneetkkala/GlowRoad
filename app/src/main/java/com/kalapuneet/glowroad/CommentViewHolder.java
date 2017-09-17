@@ -1,5 +1,6 @@
 package com.kalapuneet.glowroad;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -20,9 +21,9 @@ public class CommentViewHolder extends RecyclerView.ViewHolder implements View.O
     private AppCompatTextView whatsapp;
     private AppCompatTextView connect;
     private Comment comment;
-    private Context context;
+    private Activity context;
 
-    public void setComment(Comment comment, Context context) {
+    public void setComment(Comment comment, Activity context) {
         this.comment = comment;
         this.context = context;
         String text = comment.getUserName() + ", " + comment.getUserLocation() + " " + comment.getCommentText();

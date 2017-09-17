@@ -1,6 +1,6 @@
 package com.kalapuneet.glowroad;
 
-import android.content.Context;
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +11,9 @@ import java.util.ArrayList;
 public class FeedAdapter extends RecyclerView.Adapter {
 
     private ArrayList<Post> posts;
-    private Context context;
+    private Activity context;
 
-    public void setPosts(ArrayList<Post> posts, Context context) {
+    public void setPosts(ArrayList<Post> posts, Activity context) {
         this.posts = posts;
         this.context = context;
     }
