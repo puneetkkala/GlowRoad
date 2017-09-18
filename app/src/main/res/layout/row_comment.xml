@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <android.support.v7.widget.AppCompatImageView
+        android:src="@drawable/ic_boss"
         android:layout_marginStart="8dp"
         android:layout_gravity="center_vertical"
         android:id="@+id/user_image"

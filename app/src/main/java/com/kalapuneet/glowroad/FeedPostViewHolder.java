@@ -49,7 +49,7 @@ public class FeedPostViewHolder extends RecyclerView.ViewHolder implements View.
         shopTagLine.setText(post.getUserSubtitle());
         follow.setOnClickListener(this);
         postContent.setText(post.getPostContent());
-        remainingImageCount.setText(String.valueOf(post.getPostImages().size() - 1));
+        remainingImageCount.setText("+" + String.valueOf(post.getPostImages().size() - 1));
         moreProductsBy.setText("MORE PRODUCTS BY " + post.getUserName());
         like.setText(String.valueOf(post.getLikes()));
         comment.setOnClickListener(this);
